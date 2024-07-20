@@ -1,0 +1,48 @@
+Model and Data Paths:
+Model Train Type: sd-lora
+Pretrained Model Path: /models/Stable-diffusion/v1-5-pruned-emaonly.safetensors
+Training Data Directory: /training data
+Training Configuration:
+Resolution: 512x512
+Enable Bucket: True
+Bucket Resolution Range: 256 to 1024 with steps of 64
+Output Name: Surreal
+Output Directory: ./output
+Save Model As: safetensors
+Save Precision: fp16
+Save Every N Epochs: 2
+Max Training Epochs: 10
+Training Batch Size: 1
+Gradient Checkpointing: False
+Network Train UNet Only: False
+Network Train Text Encoder Only: False
+Learning Rates and Optimizers:
+Learning Rate: 0.0001
+UNet Learning Rate: 0.0001
+Text Encoder Learning Rate: 1e-05
+Learning Rate Scheduler: cosine_with_restarts
+LR Warmup Steps: 0
+LR Scheduler Num Cycles: 1
+Optimizer Type: AdamW8bit
+Network Settings:
+Network Module: networks.lora
+Network Dimension: 32
+Network Alpha: 32
+Logging and Precision:
+Log With: tensorboard
+Logging Directory: ./logs
+Mixed Precision: bf16
+Xformers: True
+Low RAM Mode: True
+Cache Latents: True
+Cache Latents to Disk: True
+Persistent Data Loader Workers: True
+Miscellaneous Settings:
+Caption Extension: .txt
+Shuffle Caption: True
+Keep Tokens: 0
+Max Token Length: 255
+Seed: 1337
+Clip Skip: 2
+GPU IDs: ['0']
+Platforms/Resources
